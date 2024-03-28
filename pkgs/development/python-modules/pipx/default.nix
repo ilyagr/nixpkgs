@@ -50,6 +50,9 @@ buildPythonPackage rec {
     export HOME=$(mktemp -d)
   '';
 
+  # See https://github.com/NixOS/nixpkgs/blob/3c9cdd296561bc6b9ae49586ca4c293b17d6dda1/pkgs/development/tools/backblaze-b2/default.nix#L82\
+  # for shell completion.
+
   pytestFlagsArray = [
     "--ignore=tests/test_install_all_packages.py"
     # start local pypi server and use in tests
